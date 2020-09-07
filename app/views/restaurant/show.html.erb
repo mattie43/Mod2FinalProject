@@ -2,4 +2,6 @@
 <%= @restaurant.business.name %><br>
 <%= @restaurant.business.display_phone %><br>
 <%= @restaurant.business.rating %><br>
+<%= image_tag @img_rating %><br>
+<%= @restaurant.business.review_count %><br>
 <%= @restaurant.business.location.display_address[0] + " - " + @restaurant.business.location.display_address[1] %><br>
