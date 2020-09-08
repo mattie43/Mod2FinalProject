@@ -1,0 +1,8 @@
+<h1>meal show page</h1>
+<%= @meal.name %><br>
+<%= @meal.rating %><br>
+<%= @meal.picture_url %><br>
+<%= @meal.comments %><br>
+
+<%= button_to "Restaurant page", restaurant_path(@meal.yelp_id), method: :get %>
+<%= button_to "Delete Meal", meal_path(@meal), method: :delete %>

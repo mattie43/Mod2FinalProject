@@ -1,7 +1,15 @@
 <h1>restaurant show</h1>
+
+<h4>yelp data</h4>
 <%= @restaurant.business.name %><br>
 <%= @restaurant.business.display_phone %><br>
 <%= @restaurant.business.rating %><br>
 <%= image_tag @img_rating %><br>
 <%= @restaurant.business.review_count %><br>
 <%= @restaurant.business.location.display_address[0] + " - " + @restaurant.business.location.display_address[1] %><br>
+<h4>my data</h4>
+<% @my_data.each do |m| %>
+  <%= m.name %>, Rating:
+  <%= m.rating %><br>
+<% end %>
+<%= button_to "Write new review", new_meal_path, method: :get %>

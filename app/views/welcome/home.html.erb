@@ -1,11 +1,2 @@
-<h1>search page</h1>
-<%= form_tag yelp_search_path, method: :get do %>
-  Search Term: <%= text_field_tag :term, params[:term] %><br>
-  Location: <%= text_field_tag :location, params[:location] %><br>
-  <%= submit_tag "Search" %>
-<% end %>
-<% if flash[:results] %>
-  <% flash[:results].each do |b| %>
-    <%= link_to b[0], restaurant_path(b[1]) %><br>
-  <% end %>
-<% end %>
+<h1>home page</h1>
+<%= link_to 'Restaurant Search', restaurant_search_path %>

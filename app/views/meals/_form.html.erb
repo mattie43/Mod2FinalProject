@@ -1,0 +1,15 @@
+<%= form_for @meal do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :rating %>
+  <%= f.number_field :rating %><br>
+
+  <%= f.label :picture_url %>
+  <%= f.text_field :picture_url %><br>
+
+  <%= f.label :comments %>
+  <%= f.text_area :comments %><br>
+
+  <%= f.submit %>
+<% end %>
