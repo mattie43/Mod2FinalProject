@@ -1,0 +1,7 @@
+<% if session[:user_id] == @user.id%>
+    You are viewing your profile <br>
+<% else%>
+    This is <%= @user.name %>'s profile.
+<br>
+<% end%>
+# Your previous meals include <%= @user.meals %>

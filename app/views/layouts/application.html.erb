@@ -10,6 +10,22 @@
   </head>
 
   <body>
+      
+      <ul class="nav">
+      <li><%= link_to "Users Index, can change to friends?", users_path %></li>
+      <li> "Create a meal" </li>
+      <li> "View your meals" </li>
+
+    <% if @current_user %>
+        <li class="right"> Hello, <%= @current_user.name %></li>
+        <li class="right"> <%= link_to "Logout", logout_path, method: :delete %> </li>
+    <% else %>
+        <li class="right"> <%= link_to "Sign Up", new_user_path %> </li>
+        <li class="right"><%= link_to "Login", new_login_path %> </li>
+    <% end%>
+
+    </ul>
+
     <%= yield %>
   </body>
 </html>
