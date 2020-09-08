@@ -14,7 +14,7 @@ class MealsController < ApplicationController
   end
 
   def create
-    params[:meal][:user_id] = 1 # @current_user using sessions controller
+    params[:meal][:user_id] = session[:user_id] # @current_user using sessions controller
     params[:meal][:yelp_id] = session[:current_restaurant] # @current_restaurant using sessions controller
     meal = Meal.create(meal_params)
     redirect_to meal_path(meal)
