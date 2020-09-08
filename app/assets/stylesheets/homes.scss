@@ -1,3 +1,22 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+div {
+    font-family: Helvetica Neue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em
+  }
+
+  #main-header {
+    font-size: 22px;
+    color:red;
+    width: 8em;
+  }
+
+  .submit-button {
+    font-size: 16px;
+    color:red;
+    width: 28em;
+  }
