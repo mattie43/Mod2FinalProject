@@ -1,4 +1,4 @@
- <div>
+ <div class="welcome_screen">
  <h1 id='main-header'>Please enter search terms</h1>
 <%= form_tag search_results_path, method: :post do %>
   Search Term: <%= text_field_tag :term, params[:term], :class => 'submit-button' %><br>

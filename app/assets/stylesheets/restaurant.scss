@@ -1,0 +1,33 @@
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33%;
+  padding: 3px;
+}
+.column img {
+  max-height: 350px;
+  object-fit: cover;
+  vertical-align: middle;
+  border-radius: 50px;
+}
+.column img:hover {
+  opacity: 0.5;
+}
+
+.yelp_information {
+  margin-left: 15%;
+}
+
+@font-face {
+  font-family: fonttesting;
+  src: url(/app/assets/fonts/photograph_signature.ttf);
+}
+
+.restaurant_name {
+  text-align: center;
+  font-size: 100px;
+  font-style: italic;
+  color: black;
+}

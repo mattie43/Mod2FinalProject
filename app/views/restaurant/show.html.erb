@@ -1,15 +1,36 @@
-<h1>restaurant show</h1>
+<b><h1 class="restaurant_name"><%= link_to @restaurant.business.name, @restaurant.business.url %></h1></b><br>
 
-<h4>yelp data</h4>
-<%= @restaurant.business.name %><br>
-<%= @restaurant.business.display_phone %><br>
-<%= @restaurant.business.rating %><br>
-<%= image_tag @img_rating %><br>
-<%= @restaurant.business.review_count %><br>
-<%= @restaurant.business.location.display_address[0] + " - " + @restaurant.business.location.display_address[1] %><br>
-<h4>my data</h4>
-<% @my_data.each do |m| %>
-  <%= m.name %>, Rating:
-  <%= m.rating %><br>
-<% end %>
-<%= button_to "Write new review", new_meal_path, method: :get %>
+<div class="row">
+  <div class="column">
+    <%= link_to image_tag(@restaurant.business.photos[0], width: "100%"), @restaurant.business.photos[0] %>
+  </div>
+  <div class="column">
+    <%= link_to image_tag(@restaurant.business.photos[1], width: "100%"), @restaurant.business.photos[1] %>
+  </div>
+  <div class="column">
+    <%= link_to image_tag(@restaurant.business.photos[2], width: "100%"), @restaurant.business.photos[2] %>
+  </div>
+</div>
+
+<div class="yelp_information">
+  <%= @restaurant.business.display_phone %><br>
+  <%= @restaurant.business.rating %><br>
+  <%= image_tag @img_rating %><br>
+  <%= @restaurant.business.review_count %><br>
+  <%= @restaurant.business.location.display_address[0] + " - " + @restaurant.business.location.display_address[1] %><br>
+</div>
+<div class="google_map">
+  <iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="<%= @map_embed %>">
+</iframe>
+</div>
+<div class="my_data">
+  <% @my_data.each do |m| %>
+    <%= m.name %>, Rating:
+    <%= m.rating %><br>
+  <% end %>
+  <%= button_to "Write new review", new_meal_path, method: :get %>
+</div>
