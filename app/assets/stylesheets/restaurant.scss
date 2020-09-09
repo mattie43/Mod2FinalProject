@@ -1,3 +1,7 @@
+* {
+  background: #00A5CF;
+}
+
 .row {
   display: flex;
 }
@@ -29,5 +33,7 @@
   text-align: center;
   font-size: 100px;
   font-style: italic;
-  color: black;
+}
+.restaurant_name a {
+  color: #25A18E;
 }
