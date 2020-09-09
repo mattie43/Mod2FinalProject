@@ -10,6 +10,11 @@
   </head>
 
   <body>
+
+
+   <!-- <div class='banner'>
+      <%= image_tag "logos/whoop_logo.png", class: 'banner-img' %>
+    </div> -->
       
       <ul class="nav">
       <li><%= link_to "Home", root_path %></li>
@@ -27,6 +32,15 @@
 
     </ul>
 
+    
+
     <%= yield %>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
+
   </body>
 </html>
