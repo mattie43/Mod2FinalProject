@@ -16,6 +16,11 @@ class YelpModel
     response = client.business(id)    
   end
 
+  def self.reviews(id)
+    client = Yelp::Fusion::Client.new(ENV['YELP_API'])
+    response = client.review(id)
+  end
+
   def self.img_rating(rating)
     # byebug
     temp = rating.to_s
@@ -24,5 +29,15 @@ class YelpModel
     else
       "yelp_stars/large/large_#{temp[0]}_half.png"
     end
+  end
+
+  def self.img_rating_review(rating)
+    # byebug
+    temp = rating.to_s
+    # if temp[-1] == "0"
+      "yelp_stars/small/small_#{temp[0]}.png"
+    # else
+    #   "yelp_stars/small/small_#{temp[0]}_half.png"
+    # end
   end
 end
