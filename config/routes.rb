@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :meals
   resources :users
   root 'welcome#home'
-  get 'restaurant/search', to: 'restaurant#search', as: 'restaurant_search'
-  post 'restaurant/search', to: 'restaurant#search_results', as: 'search_results'
+  get '/restaurant/search', to: 'restaurant#search', as: 'restaurant_search'
+  post '/restaurant/search', to: 'restaurant#search_results', as: 'search_results'
   resources :restaurant, only: [:show]
 
   post '/login', to: 'sessions#login', as: 'login'
