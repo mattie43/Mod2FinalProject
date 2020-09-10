@@ -1,10 +1,16 @@
 <h1>Your review for <%= @restaurant_name %></h1>
 
 <div class="container">
-  Name: <%= @meal.name %><br>
-  Rating: <%= @meal.rating %><br>
-  <%= image_tag @meal.picture_url %><br>
-  <%= @meal.comments %><br>
+  <div class="top_meal">
+    <label id="meal_name">Name: <%= @meal.name %></label>
+    <label id="meal_rating">Rating: <%= @meal.rating %></label>
+  </div>
+  <div class="meal_picture">
+    <%= image_tag @meal.picture_url %>
+  </div>
+  <div class="comment_box">
+    <%= @meal.comments %>
+  </div>
 
   <div class="row">
     <%= button_to "Visit Restaurant Page", restaurant_path(@meal.yelp_id), method: :get %>
