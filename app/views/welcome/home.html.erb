@@ -12,7 +12,6 @@
       <h1>Whoop.</h1>
       <h6>Find a restaurant. Rate a meal.<h6>
 
-      <form>
         <%= form_tag search_results_path, method: :post do %>
         <div class="form-group">
           <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search Term" %><br>
@@ -20,7 +19,6 @@
         </div>
           <%= submit_tag "Go", class: 'btn-outline-dark' %>
         <% end %>
-      </form>
 
     </div>
 

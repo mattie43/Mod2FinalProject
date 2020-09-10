@@ -16,10 +16,22 @@
 //     border-color: #25A18E; 
 //   }
 
-h1 {
-  text-color: #25A18E;
+// h1 {
+//   color: #25A18E;
+// }
+
+// #description {
+//   font-size: 100px;
+// }
+
+
+
+@import "bootstrap/scss/bootstrap";
+
+.jumbotron {
+  background-color: #9FFFCB;
 }
 
 #description {
-  font-size: 100px;
+  font-size: 40px;
 }
