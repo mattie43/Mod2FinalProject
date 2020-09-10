@@ -1,4 +1,4 @@
- <div>
+<!-- <div>
  <h1 id='main-header'></h1>
 <%= form_tag search_results_path, method: :post do %>
   Search Term: <%= text_field_tag :term, params[:term], :class => 'submit-button' %><br>
@@ -10,5 +10,37 @@
   <% flash[:results].each do |b| %>
     <%= link_to b[0], restaurant_path(b[1]) %><br>
   <% end %>
-<% end %> 
+<% end %> -->
 
+<div class="parent">
+  <h1 class="div1">Welcome to Whoop!</h1>
+  <div class="div2">
+    <p>The best place on Earth for rating meals.</p>
+    <p>“One cannot think well, love well, sleep well, if one has not dined well.”</p>
+  </div>
+</div>
+ 
+<div class="container">
+  <%= image_tag "whoop_logo.png", class: "whoop_logo" %>
+  <h5 style="text-align:center">Find a restaurant. Rate a meal.<h5>
+  <%= form_tag search_results_path, method: :post do %>
+    <div class="form-group">
+      <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search Term" %><br>
+      <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Location" %> <br>
+    </div>
+    <%= submit_tag "Go", id: 'btn-home' %>
+<% end %>
+</div>
+
+<hr>
+
+<div class="container">
+<% if flash[:results] %>
+  <% flash[:results].each do |b| %>
+    <%= link_to b[0], restaurant_path(b[1]) %><br>
+  <% end %>
+  <% else %>
+    <p id=description>Search for your favorite restaurants. Record and rate your meals. blah blah blah<p>
+  <% end %>
+</div>
+<hr>

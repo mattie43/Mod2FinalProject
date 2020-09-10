@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Food Reviews</title>
+    <title>Whoop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,11 +18,11 @@
       <% end%>
 
     <% if @current_user %>
-        <li class="right"> Signed in as: <b id='profile-name'><%= @current_user.name %></b></li>
-        <li class="right"> <%= link_to "Logout", logout_path, method: :delete %> </li>
+        <li class="nav_right"> Signed in as: <b id='profile-name'><%= @current_user.name %></b></li>
+        <li class="nav_right"> <%= link_to "Logout", logout_path, method: :delete %> </li>
     <% else %>
-        <li class="right"> <%= link_to "Sign Up", new_user_path %> </li>
-        <li class="right"><%= link_to "Login", new_login_path %> </li>
+        <li class="nav_right"> <%= link_to "Sign Up", new_user_path %> </li>
+        <li class="nav_right"><%= link_to "Login", new_login_path %> </li>
     <% end%>
 
     </ul>
