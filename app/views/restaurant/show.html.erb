@@ -59,13 +59,15 @@ span.onclick = function() {
       <b id="reviews"><%= @restaurant.business.review_count %> reviews</b>
     </div><br>
 
-    <% 3.times do |num| %>
-      <b><%= @yelp_reviews.reviews[num].user.name %>
-      <%= image_tag YelpModel.img_rating_review(@yelp_reviews.reviews[num].rating) %>
-      <%= @yelp_reviews.reviews[num].time_created[0..9] %></b>
-      <p id="review_text"><%= @yelp_reviews.reviews[num].text %></p>
-      <% if @yelp_reviews.reviews[num].text[-3..-1] == "..." %>
-        <%= link_to "Read More", @yelp_reviews.reviews[num].url %><br>
+    <% if @yelp_reviews %>
+      <% @yelp_reviews.reviews.count.times do |num| %>
+        <b><%= @yelp_reviews.reviews[num].user.name %>
+        <%= image_tag YelpModel.img_rating_review(@yelp_reviews.reviews[num].rating) %>
+        <%= @yelp_reviews.reviews[num].time_created[0..9] %></b>
+        <p id="review_text"><%= @yelp_reviews.reviews[num].text %></p>
+        <% if @yelp_reviews.reviews[num].text[-3..-1] == "..." %>
+          <%= link_to "Read More", @yelp_reviews.reviews[num].url %><br>
+        <% end %>
       <% end %>
     <% end %>
   </div>

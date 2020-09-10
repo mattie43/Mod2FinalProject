@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  post "/meals/new?inlineRadioOptions=:rating", to: "meals#create"
+  post "/meals/create", to: "meals#create"
+
   resources :meals
   resources :users
   root 'welcome#home'

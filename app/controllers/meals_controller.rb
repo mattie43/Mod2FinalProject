@@ -1,27 +1,32 @@
 class MealsController < ApplicationController
 
   def index
-    user = User.find(1)#@current_user.id
+    user = User.find(session[:user_id]) # @current_user.id
     @meals = user.meals
   end
 
   def show
     @meal = Meal.find(params[:id])
+    @restaurant_name = YelpModel.specific_search(session[:current_restaurant]).business.name
   end
 
   def new
     @meal = Meal.new
+    @restaurant_name = YelpModel.specific_search(session[:current_restaurant]).business.name
   end
 
   def create
     params[:meal][:user_id] = session[:user_id] # @current_user using sessions controller
     params[:meal][:yelp_id] = session[:current_restaurant] # @current_restaurant using sessions controller
+    params[:meal][:rating] = params[:rating].to_i
+    # byebug
     meal = Meal.create(meal_params)
     redirect_to meal_path(meal)
   end
 
   def edit
     @meal = Meal.find(params[:id])
+    @restaurant_name = YelpModel.specific_search(session[:current_restaurant]).business.name
   end
   
   def update

@@ -1,15 +1,51 @@
-<%= form_for @meal do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
 
-  <%= f.label :rating %>
-  <%= f.number_field :rating %><br>
+<div class="container">
+  <%= form_for @meal do |f| %>
 
-  <%= f.label :picture_url %>
-  <%= f.text_field :picture_url %><br>
+  <div class="row">
+    <div class="col-25">
+      <%= f.label "Meal name" %>
+    </div>
+    <div class="col-75">
+      <%= f.text_field :name %><br>
+    </div>
+  </div>
 
-  <%= f.label :comments %>
-  <%= f.text_area :comments %><br>
+  <div class="row">
+    <div class="col-25">
+      <%= f.label "Rating" %>
+    </div>
+    <div class="col-25-rating">
+      <select id="rating" name="rating">
+        <option value="1">Rating: 1</option>
+        <option value="2">Rating: 2</option>
+        <option value="3">Rating: 3</option>
+        <option value="4">Rating: 4</option>
+        <option value="5">Rating: 5</option>
+      </select>
+    </div>
+  </div>
 
-  <%= f.submit %>
-<% end %>
+  <div class="row">
+    <div class="col-25">
+      <%= f.label :picture_url %>
+    </div>
+    <div class="col-75">
+      <%= f.text_field :picture_url %><br>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <%= f.label :comments %>
+    </div>
+    <div class="col-75">
+      <%= f.text_area :comments, style: "height:200px" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>
