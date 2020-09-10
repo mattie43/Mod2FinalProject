@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 # hiding API keys
 gem 'dotenv-rails'
 
+# gem 'bootstrap', '~> 5.0.0.alpha1'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

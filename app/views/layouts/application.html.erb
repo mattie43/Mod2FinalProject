@@ -10,6 +10,11 @@
   </head>
 
   <body>
+
+
+   <!-- <div class='banner'>
+      <%= image_tag "logos/whoop_logo.png", class: 'banner-img' %>
+    </div> -->
       
       <ul class="nav">
       <li><%= link_to "Home", root_path %></li>
@@ -27,6 +32,16 @@
 
     </ul>
 
+    
+
     <%= yield %>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Privacy Policy</a>.</p>
+        </div>
+      </footer>
+    </div>
+
   </body>
 </html>

@@ -1,11 +1,35 @@
-<h2> <% if session[:user_id] == @user.id%>
- <%= @user.name %>'s Profile <br>
-<% else%>
-    <%= @user.name %>'s profile 
-<br>
-<% end%></h2>
+<!--<div class="container text-left">
+<h1 class="page-header"> 
+ <%= @user.name %>'s Profile <small><%= @user.meals.count %> meals <small> <br>
+</div> -->
 
-<h1>Your previous meals include:</h1> 
-<p><%= @user.meals.each do |meal| %>
-    <%= meal.name %>
-<% end %><p>
+<div class="container text-center">
+    <div class=row>
+    <span class="border-right border-dark">
+    
+        <div class=col-sm>
+        
+            <h2 class="text-center">Your previous meals include:</h2> 
+            <p><% @user.meals.each do |meal| %>
+                <%= meal.picture_url %>
+            <% end %><p>
+            </div></span>
+        <div class=col-sm>
+            <h2 class="text-center">You've visited these restaruants</h2>
+            <p><% @user.meals.each do |meal| %>
+                <%= meal.yelp_id.name %>
+            <% end%><p>
+        </div>
+        <span class="border-left">
+        <div class=col-sm>  
+            <h1 class="text-center"> 
+                <%= @user.name %>'s Profile </h1>
+                Number of meals: <%= @user.meals.count %><br>
+                <% if @user.average_rating%>
+                    Average rating: <%= @user.average_rating %>
+                <% else%>
+                    Average rating: You need ratings to have an average rating!
+                <% end%><br>
+        </div></span>    
+    </div>    
+</div>

@@ -10,9 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
+
+ @import "bootstrap/scss/bootstrap";
+
+
+ .jumbotron {
+   background-color: #9FFFCB;
+ }
+
 
  ul.nav {
     height: 40px;
@@ -33,9 +40,26 @@
  
   a {
     text-decoration: none;
-    /* color: black; */
+    color: black;
+  }
+
+  .banner {
+    max-width: 350px;
+    margin: 0px auto;
   }
  
-  .right {
-    float: right;
+  .banner-img {
+    max-width: 350px;
+    max-height:100px;
   }
+ 
+  .mt-auto {
+    margin-top: auto!important;
+}
+
+#description {
+  font-size: 40px;
+}
+  // .right {
+  //   float: right;
+  // }

@@ -2,24 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.welcome_screen div {
-    font-family: Helvetica Neue;
-    margin-left: auto;
-    margin-right: auto;
-    width: 8em
-  }
+// .welcome_screen div {
+//     font-family: Helvetica Neue;
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 8em
+//   }
 
-  #main-header {
-    width: 250px;
-    border: 50px solid;
-    border-width: 2px;
-    border-color: #25A18E; 
-  }
+//   #main-header {
+//     width: 250px;
+//     border: 50px solid;
+//     border-width: 2px;
+//     border-color: #25A18E; 
+//   }
 
-  .submit-button {
-    margin-left: auto;
-    margin-right: auto;   
-    color: #25A18E;
-    display: block;
-    margin: 0 auto;
-  }
+h1 {
+  text-color: #25A18E;
+}
+
+#description {
+  font-size: 100px;
+}

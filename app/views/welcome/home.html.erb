@@ -1,11 +1,41 @@
- <div>
- <h1 id='main-header'></h1>
-<%= form_tag search_results_path, method: :post do %>
-  Search Term: <%= text_field_tag :term, params[:term], :class => 'submit-button' %><br>
-  Location: <%= text_field_tag :location, params[:location], :class => 'submit-button' %><br>
-  <%= submit_tag "Search", :class => 'submit-button' %>
-<% end %>
+ <div class="jumbotron">
+  <h1 class="display-6">Welcome to Rate My Meals</h1>
+  <p class="lead">The best place on Earth for rating meals.</p>
+  <hr class="my-4">
+  <p>“One cannot think well, love well, sleep well, if one has not dined well.”</p>
 </div>
+ 
+ 
+ <div class="container text-center">
+  <div class=row>
+    <div class=col-sm>
+      <h1>Whoop.</h1>
+      <h6>Find a restaurant. Rate a meal.<h6>
+
+      <form>
+        <%= form_tag search_results_path, method: :post do %>
+        <div class="form-group">
+          <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search Term" %><br>
+          <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Location" %> <br>
+        </div>
+          <%= submit_tag "Go", class: 'btn-outline-dark' %>
+        <% end %>
+      </form>
+
+    </div>
+
+  </div>
+
+<hr>
+
+  <div class="row">
+    <div class="col">
+      <p id=description>Search for your favorite restaurants. Record and rate your meals. blah blah blah<p>
+    </div>
+  </div>
+</div>  
+<hr>
+
 <% if flash[:results] %>
   <% flash[:results].each do |b| %>
     <%= link_to b[0], restaurant_path(b[1]) %><br>
