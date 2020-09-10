@@ -2,7 +2,7 @@
   <h1 class="display-6">Welcome to Rate My Meals</h1>
   <p class="lead">The best place on Earth for rating meals.</p>
   <hr class="my-4">
-  <p>Quote.</p>
+  <p>“One cannot think well, love well, sleep well, if one has not dined well.”</p>
 </div>
  
  
@@ -10,7 +10,7 @@
   <div class=row>
     <div class=col-sm>
       <h1>Whoop.</h1>
-      <h6>Find a restaurant<h6>
+      <h6>Find a restaurant. Rate a meal.<h6>
 
       <form>
         <%= form_tag search_results_path, method: :post do %>
@@ -24,11 +24,16 @@
 
     </div>
 
-    <div class=col-sm>
-      Ear
+  </div>
+
+<hr>
+
+  <div class="row">
+    <div class="col">
+      <p id=description>Search for your favorite restaurants. Record and rate your meals. blah blah blah<p>
     </div>
   </div>
-</div>
+</div>  
 <hr>
 
 <% if flash[:results] %>

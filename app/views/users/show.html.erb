@@ -6,7 +6,9 @@
 <div class="container text-center">
     <div class=row>
     <span class="border-right border-dark">
+    
         <div class=col-sm>
+        
             <h2 class="text-center">Your previous meals include:</h2> 
             <p><% @user.meals.each do |meal| %>
                 <%= meal.picture_url %>
