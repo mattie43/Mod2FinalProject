@@ -37,6 +37,19 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+#delete-meal {
+  float: right;
+}
+
+#restuarant-btn {
+  float: left;
+}
+
+#edit-meal {
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;

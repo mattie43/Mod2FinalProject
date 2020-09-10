@@ -14,28 +14,34 @@
  *= require_self
  */
 
- ul.nav {
-    height: 40px;
-    margin-bottom: 0px;
-    border-bottom: 0.5px solid #00A5CF;
-   }
+ul.nav {
+  height: 40px;
+  margin-bottom: 0px;
+  border-bottom: 0.5px solid #00A5CF;
+}
 
-   ul.nav li {
-    line-height: 40px;
-    display: inline-block;
-    padding: 0px 20px;
-  }
- 
-  ul.nav li:hover {
-   background-color: lightgray;
-   transition: 1s;
-  }
- 
-  a {
-    text-decoration: none;
-    /* color: black; */
-  }
- 
-  .nav_right {
-    float: right;
-  }
+ul.nav li {
+  line-height: 40px;
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+ul.nav li:hover {
+  background-color: lightgray;
+  transition: 1s;
+}
+
+a {
+  text-decoration: none;
+  /* color: black; */
+}
+
+.nav_right {
+  float: right;
+}
+
+hr {
+  height: 1px;
+  background-color: #00A5CF;
+  border: none;
+}

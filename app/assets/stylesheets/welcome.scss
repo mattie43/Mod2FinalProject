@@ -2,36 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .welcome_screen div {
-//   font-family: Helvetica Neue;
-//   margin-left: auto;
-//   margin-right: auto;
-//   width: 8em
-// }
-
-// #main-header {
-//   width: 250px;
-//   border: 50px solid;
-//   border-width: 2px;
-//   border-color: #25A18E; 
-// }
-
-// .submit-button {
-//   margin-left: auto;
-//   margin-right: auto;   
-//   color: #25A18E;
-//   display: block;
-//   margin: 0 auto;
-// }
-
-// #btn-outline-dark {
-//   margin-left: auto;
-//   margin-right: auto;
-// }
-
-
-
-.parent {
+.parent-welcome {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -42,10 +13,11 @@
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 8px;
   padding: 20px;
   border-radius: 5px;
 }
-.parent p {
+.parent-welcome p {
   font-size: 25px;
 }
 
@@ -56,25 +28,30 @@
   // height: 200px;
 }
 
-input[type=submit] {
+.container-welcome {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#btn-welcome {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0;
-  position: absolute;
-  top: 92%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
-#description {
+.div1-welcome { 
+  grid-area: 1 / 2 / 2 / 5;
+}
+.div2-welcome { 
+  grid-area: 2 / 2 / 4 / 5;
   text-align: center;
 }
-
-.div1 { grid-area: 1 / 2 / 2 / 5; }
-.div2 { grid-area: 2 / 2 / 4 / 5; }
-.div3 { grid-area: 4 / 2 / 5 / 5; }
+.div3-welcome { grid-area: 4 / 2 / 5 / 5; }

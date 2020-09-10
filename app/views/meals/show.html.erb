@@ -4,10 +4,13 @@
   Name: <%= @meal.name %><br>
   Rating: <%= @meal.rating %><br>
   <%= image_tag @meal.picture_url %><br>
-  <%= @meal.comments %><br>
+  <%= @meal.comments %><br><br>
 
   <div class="row">
-    <%= button_to "Visit Restaurant Page", restaurant_path(@meal.yelp_id), method: :get %>
-    <%= button_to "Delete Meal", meal_path(@meal), method: :delete%>
+    <%= button_to "Visit Restaurant Page", restaurant_path(@meal.yelp_id), method: :get, id: "restuarant-btn" %>
+    <div id="edit-meal">
+      <%= button_to "Edit Review", meal_path(@meal), method: :delete %>
+    </div>
+    <%= button_to "Delete Review", meal_path(@meal), method: :delete, id: "delete-meal" %>
   </div>
 </div>

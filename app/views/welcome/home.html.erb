@@ -1,41 +1,26 @@
-<!-- <div>
- <h1 id='main-header'></h1>
-<%= form_tag search_results_path, method: :post do %>
-  Search Term: <%= text_field_tag :term, params[:term], :class => 'submit-button' %><br>
-  Location: <%= text_field_tag :location, params[:location], :class => 'submit-button' %><br>
-  <%= submit_tag "Search", :class => 'submit-button' %>
-<% end %>
-</div>
-<% if flash[:results] %>
-  <% flash[:results].each do |b| %>
-    <%= link_to b[0], restaurant_path(b[1]) %><br>
-  <% end %>
-<% end %> -->
-
-
-<div class="parent">
-  <h1 class="div1">Welcome to Whoop!</h1>
-  <div class="div2">
+<div class="parent-welcome">
+  <h1 class="div1-welcome">Welcome to Whoop!</h1>
+  <div class="div2-welcome">
     <p>The best place on Earth for rating meals.</p>
     <p>“One cannot think well, love well, sleep well, if one has not dined well.”</p>
   </div>
 </div>
+
+<hr>
  
-<div class="container">
+<div class="container-welcome">
   <%= image_tag "whoop_logo.png", class: "whoop_logo" %>
   <h5 style="text-align:center">Find a restaurant. Rate a meal.<h5>
   <%= form_tag search_results_path, method: :post do %>
-    <div class="form-group">
-      <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search Term" %><br>
-      <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Location" %> <br>
-    </div>
-    <%= submit_tag "Go", id: 'btn-home' %>
+    <%= text_field_tag :term, params[:term], placeholder: "Search Term" %><br>
+    <%= text_field_tag :location, params[:location], placeholder: "Location" %> <br>
+    <%= submit_tag "Go", id: 'btn-welcome' %>
 <% end %>
 </div>
 
 <hr>
 
-<div class="container">
+<div class="container-welcome">
 <% if flash[:results] %>
   <% flash[:results].each do |b| %>
     <%= link_to b[0], restaurant_path(b[1]) %><br>

@@ -1,12 +1,12 @@
-<b><h1 class="restaurant_name"><%= link_to @restaurant.business.name, @restaurant.business.url %></h1></b><br>
+<b><h1 class="restaurant-name"><%= link_to @restaurant.business.name, @restaurant.business.url %></h1></b><br><hr>
 
-<div class="row">
+<div class="row-restaurant">
   <% 3.times do |num| %>
-    <div class="column">
+    <div class="column-restaurant">
       <img class="myImages" id="myImg" src="<%= @restaurant.business.photos[num] %>" style="width:100%">
     </div>
   <% end %>
-</div><br>
+</div><br><hr>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -50,21 +50,21 @@ span.onclick = function() {
 };
 </script>
 
-<div class="parent_rest">
+<div class="parent-restaurant">
   <!-- div1 section of 3 column grid -->
-  <div class="div1"> 
+  <div class="div1-restaurant"> 
     <%= image_tag "yelp_logo.png" %><br>
-    <div class="rating_row">
+    <div class="rating-row">
       <%= image_tag @img_rating %>
-      <b id="reviews"><%= @restaurant.business.review_count %> reviews</b>
-    </div><br>
+      <b id="reviews-restaurant"><%= @restaurant.business.review_count %> reviews</b>
+    </div>
 
     <% if @yelp_reviews %>
       <% @yelp_reviews.reviews.count.times do |num| %>
-        <b><%= @yelp_reviews.reviews[num].user.name %>
+        <b><p id="user-restaurant"><%= @yelp_reviews.reviews[num].user.name %>
         <%= image_tag YelpModel.img_rating_review(@yelp_reviews.reviews[num].rating) %>
-        <%= @yelp_reviews.reviews[num].time_created[0..9] %></b>
-        <p id="review_text"><%= @yelp_reviews.reviews[num].text %></p>
+        <%= @yelp_reviews.reviews[num].time_created[0..9] %></p></b>
+        <p id="review-text"><%= @yelp_reviews.reviews[num].text %></p>
         <% if @yelp_reviews.reviews[num].text[-3..-1] == "..." %>
           <%= link_to "Read More", @yelp_reviews.reviews[num].url %><br>
         <% end %>
@@ -74,11 +74,11 @@ span.onclick = function() {
 
 
   <!-- div2 section of 3 column grid -->
-  <div class="div2"> 
-    <div class="yelp_information">
+  <div class="div2-restaurant"> 
+    <div class="yelp-information">
       <%= @restaurant.business.display_phone %><br>
     </div>
-    <div class="google_map">
+    <div class="google-map">
       <iframe
         width="500"
         height="350"
@@ -89,8 +89,8 @@ span.onclick = function() {
   </div>
 
   <!-- div3 section of 3 column grid -->
-  <div class="div3"> 
-    <div class="my_data">
+  <div class="div3-restaurant"> 
+    <div class="my-data">
       <% @my_data.each do |m| %>
         <%= m.name %>, Rating:
         <%= m.rating %><br>
