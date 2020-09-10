@@ -40,4 +40,9 @@ class YelpModel
     #   "yelp_stars/small/small_#{temp[0]}_half.png"
     # end
   end
+
+  def self.img_rating_show(rating)
+    temp = rating.to_s
+    "yelp_stars/large/large_#{temp[0]}.png"
+  end
 end

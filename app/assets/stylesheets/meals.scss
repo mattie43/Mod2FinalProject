@@ -23,7 +23,7 @@ label {
   display: inline-block;
 }
 
-input[type=submit] {
+#create-meal {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -33,21 +33,40 @@ input[type=submit] {
   float: right;
 }
 
-input[type=submit]:hover {
+#create-meal:hover {
   background-color: #45a049;
 }
 
 #delete-meal {
-  float: right;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 #restuarant-btn {
-  float: left;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 #edit-meal {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-line {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .container {
@@ -91,3 +110,32 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
+
+#meal-name {
+  float: left;
+  font-size: 30px;
+}
+
+#meal-rating {
+  float: right;
+  font-size: 30px;
+}
+
+.parent-show-meal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+  
+.div1-show-meal {
+  grid-area: 1 / 1 / 6 / 2;
+  padding-right: 5px;
+  border-radius: 10px;
+}
+.div1-show-meal img {
+  border-radius: 10px;
+}
+
+.div2-show-meal { grid-area: 1 / 2 / 6 / 3; }

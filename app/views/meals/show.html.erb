@@ -1,16 +1,23 @@
-<h1>Your review for <%= @restaurant_name %></h1>
+<h1>Your review for <%= @restaurant_name %></h1><hr>
 
 <div class="container">
-  Name: <%= @meal.name %><br>
-  Rating: <%= @meal.rating %><br>
-  <%= image_tag @meal.picture_url %><br>
-  <%= @meal.comments %><br><br>
+    <b id="meal-name"> Name: <%= @meal.name %></b>
+    <b id="meal-rating"> Rating: <%= image_tag YelpModel.img_rating_show(@meal.rating) %></b><br><br>
+
+  <div class="parent-show-meal">
+    <div class="div1-show-meal">
+      <%= image_tag @meal.picture_url %>
+    </div>
+    <div class="div2-show-meal">
+      <%= @meal.comments %>
+    </div>
+  </div><br>
 
   <div class="row">
-    <%= button_to "Visit Restaurant Page", restaurant_path(@meal.yelp_id), method: :get, id: "restuarant-btn" %>
-    <div id="edit-meal">
-      <%= button_to "Edit Review", meal_path(@meal), method: :delete %>
+    <div class="button-line">
+      <%= button_to "Visit Restaurant Page", restaurant_path(@meal.yelp_id), method: :get, id: "restuarant-btn" %>
+      <%= button_to "Edit Review", edit_meal_path(@meal), method: :get, id: "edit-meal" %>
+      <%= button_to "Delete Review", meal_path(@meal), method: :delete, id: "delete-meal" %>
     </div>
-    <%= button_to "Delete Review", meal_path(@meal), method: :delete, id: "delete-meal" %>
   </div>
-</div>
+</div><hr>
