@@ -13,7 +13,7 @@
       <h6>Find a restaurant. Rate a meal.<h6>
 
       <form>
-        <%= form_tag action: search_results_path, controller: "restaurant", method: :post do %>
+        <%= form_tag search_results_path, method: :post do %>
         <div class="form-group">
           <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search Term" %><br>
           <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Location" %> <br>
