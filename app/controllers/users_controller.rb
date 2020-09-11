@@ -14,8 +14,15 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
+
+        if @user.valid?
+            flash[:success] = "Welcome"
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            flash[:my_errors] = @user.errors.full_messages
+            redirect_to new_user_path
+        end
     end
 
     private
