@@ -31,6 +31,7 @@ class MealsController < ApplicationController
   
   def update
     meal = Meal.find(params[:id])
+    params[:meal][:rating] = params[:rating].to_i
     meal.update(meal_params)
     redirect_to meal_path(meal)
   end

@@ -15,6 +15,6 @@ class RestaurantController < ApplicationController
 
     first = @restaurant.business.location.display_address[0].tr(' ','+')
     second = @restaurant.business.location.display_address[1].tr(' ','+')
-    # @map_embed = GoogleMaps.map_display(first,second)
+    @map_embed = GoogleMaps.map_display(first,second)
   end
 end

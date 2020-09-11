@@ -32,7 +32,6 @@ label {
   cursor: pointer;
   float: right;
 }
-
 #create-meal:hover {
   background-color: #45a049;
 }
@@ -45,6 +44,9 @@ label {
   border-radius: 4px;
   cursor: pointer;
 }
+#delete-meal:hover {
+  background-color: #45a049;
+}
 
 #restuarant-btn {
   background-color: #4CAF50;
@@ -54,6 +56,9 @@ label {
   border-radius: 4px;
   cursor: pointer;
 }
+#restuarant-btn:hover {
+  background-color: #45a049;
+}
 
 #edit-meal {
   background-color: #4CAF50;
@@ -62,6 +67,9 @@ label {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+#edit-meal:hover {
+  background-color: #45a049;
 }
 
 .button-line {
@@ -138,4 +146,7 @@ label {
   border-radius: 10px;
 }
 
-.div2-show-meal { grid-area: 1 / 2 / 6 / 3; }
+.div2-show-meal { 
+  grid-area: 1 / 2 / 6 / 3;
+  font-size: 24px;
+}
