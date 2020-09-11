@@ -7,16 +7,26 @@
 }
 
 .container-1 div{
-  border:1px #ccc solid;
+  border:1px #00A5CF solid;
   padding:10px
 }
 
 .box-1{
   flex:1;
+  text-align: center;
+}
+.box-1 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box-2{
   flex:1;
+  text-align: center;
+}
+.box-2 label {
+  font-size: 50px;
 }
 
 .form {
@@ -30,4 +40,16 @@
 
 small {
   color: gray;
+}
+
+#login-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#login-btn:hover {
+  background-color: #45a049;
 }

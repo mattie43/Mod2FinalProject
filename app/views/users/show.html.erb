@@ -1,51 +1,30 @@
-<h2> <% if session[:user_id] == @user.id%>
- <%= @user.name %>'s Profile <small><%= @user.meals.count %> meals </small> <br>
-<% else%>
-    <%= @user.name %>'s profile <small><%= meals.count %> meals<small>
-<br>
-<% end%></h2>
-
-
-
-
 <div class="container-1">
     <div class=box-1>
-        <%= 3.times do %>
-            <h1>Pasta</h1><br>
-            <p> 5 stars <p><br>
-            <%= image_tag "whoop_logo.png"%>
-            <p> One of the greatest meals I've ever had <p>
-            <hr>
-        <% end%>
-    </div>
-    <div class="box-2">  
-        <h1>Restaurants<h1>
-    <div>      
-</div>
-
-
-
-
-
-
-
-<!--<div class="container-1">
-    <div class=box-1>
+    <h2> <% if session[:user_id] == @user.id%>
+      <%= @user.name %>'s Profile <small><%= @user.meals.count %> reviews </small>
+    <% else%>
+      <%= @user.name %>'s profile <small><%= @user.meals.count %> reviews</small>
+    <% end%></h2><hr>
     <% if @user.meals.count > 0%>
         <% @user.meals.each do |meal|%>
-            <h1><%= meal.name %><br><h1>
-            <p><%= meal.rating %><br><p>
-            <%= image_tag "meal.picture_url" %>
-            <p> One of the greatest meals I've ever had <p>
+            <h1><%= meal.name %><br></h1>
+            <%= image_tag YelpModel.img_rating_show(meal.rating) %><br>
+            <%= image_tag meal.picture_url %>
+            <p> <%= meal.comments %> </p>
             <hr>
         <% end%>
     <% else %>
-        You don't have any meals! <%= link_to 'Add some', new_meal_path %>.
+        You don't have any reviews! <%= link_to 'Add some', root_path %>.
     <% end%>
     </div>
     <div class="box-2">  
-        <h3>fadfsf<h3>
-    <div>      
+        <h2>Restaurants you've written about</h2><hr>
+        <% @user.restaurants_visited.each do |r| %>
+          <% business = YelpModel.specific_search(r).business %>
+          <label><%= link_to business.name, restaurant_path(business.id) %></label>
+          <hr>
+        <% end %>
+    </div>      
 </div>
 
 

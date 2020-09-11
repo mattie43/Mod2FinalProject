@@ -7,4 +7,13 @@ class User < ApplicationRecord
     validates :name, uniqueness: true
     validates :name, format: { without: /\s/, message: "must contain no spaces" }
 
+    def restaurants_visited
+      arr = []
+      self.meals.count.times do |num|
+        arr << self.meals[num].yelp_id
+      end
+      arr.uniq
+      # byebug
+    end
+
 end

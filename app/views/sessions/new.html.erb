@@ -1,9 +1,9 @@
-<% if flash[:my_errors] %>
-  <p><%=  flash[:my_errors] %><p>
-<% end %>
+
 
 <h3 style="text-align:center">Login In</h3>
-
+<% if flash[:my_errors] %>
+  <div class="errors"><%= flash[:my_errors] %></div>
+<% end %>
 <div class="form">
 <%= form_for :session, url: login_path do |f| %>
   <%= f.label :Username %>
@@ -12,6 +12,6 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <div id="button"> <%= f.submit "Login" %> </div>
+  <div id="button"> <%= f.submit "Login", id: "login-btn"%> </div>
 <% end %>
 </div>

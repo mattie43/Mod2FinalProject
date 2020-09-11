@@ -61,6 +61,7 @@ span.onclick = function() {
 
     <% if @yelp_reviews %>
       <% @yelp_reviews.reviews.count.times do |num| %>
+        <div id="review-box">
         <b><p id="user-restaurant"><%= @yelp_reviews.reviews[num].user.name %>
         <%= image_tag YelpModel.img_rating_review(@yelp_reviews.reviews[num].rating) %>
         <%= @yelp_reviews.reviews[num].time_created[0..9] %></p></b>
@@ -68,6 +69,7 @@ span.onclick = function() {
         <% if @yelp_reviews.reviews[num].text[-3..-1] == "..." %>
           <%= link_to "Read More", @yelp_reviews.reviews[num].url %><br>
         <% end %>
+        </div><br>
       <% end %>
     <% end %>
   </div>
@@ -83,14 +85,11 @@ span.onclick = function() {
         src="<%= @map_embed %>">
       </iframe>
     </div>
-  </div>
 
   <!-- div3 section of 1 column grid -->
-  <div class="div3-restaurant">
     <div class="yelp-information">
-      <br><br><br>
-      <b>Price: </b><%= @restaurant.business.price %><br><br>
-      <b>Phone: </b><%= @restaurant.business.display_phone %><br><br>
+      <div id="price-phone"><b>Price: <%= @restaurant.business.price %></b>
+      <b>Phone: <%= @restaurant.business.display_phone %></b></div><br>
       <b id="rest-hours">Hours</b><br>
       <b>Mon: </b><%= @restaurant.business.hours[0].open[0].start + "-" + @restaurant.business.hours[0].open[0].end %><br>
       <b>Tues: </b><%= @restaurant.business.hours[0].open[1].start + "-" + @restaurant.business.hours[0].open[1].end %><br>
@@ -99,7 +98,7 @@ span.onclick = function() {
       <b>Fri: </b><%= @restaurant.business.hours[0].open[4].start + "-" + @restaurant.business.hours[0].open[4].end %><br>
       <b>Sat: </b><%= @restaurant.business.hours[0].open[5].start + "-" + @restaurant.business.hours[0].open[5].end %><br>
       <b>Sun: </b><%= @restaurant.business.hours[0].open[6].start + "-" + @restaurant.business.hours[0].open[6].end %><br>
-      <% if @restaurant.business.hours[0].is_open_now %>
+      <% if @restaurant.business.hours[0].is_open_now %><br>
         <b style="color:green">OPEN NOW</b>
       <% else %>
         <b style="color:red">CLOSED NOW</b>
@@ -107,14 +106,17 @@ span.onclick = function() {
     </div>
   </div>
 
-  <!-- div3 section of 3 column grid -->
+  <!-- div4 section of 3 column grid -->
   <div class="div4-restaurant"> 
     <div class="my-data">
       <% @my_data.each do |m| %>
+        <div id="review-box">
         <b><p id="user-restaurant"><%= m.user.name %>
         <%= image_tag YelpModel.img_rating_review(m.rating) %>
         <%= m.created_at.strftime("%Y-%m-%d") %></p></b>
+        <b><%= link_to m.name, meal_path(m) %></b><br>
         <%= m.comments %>
+        </div><br>
       <% end %>
     </div><br>
     <% if session[:user_id] %>

@@ -1,13 +1,13 @@
-<% if flash[:my_errors] %>
-  <% flash[:my_errors].each do |error| %>
-    <p><%= error %></p>
-  <% end %>
-<% end %>
+
 
 
 
   <h3 style="text-align:center">Sign Up</h3>
-
+  <% if flash[:my_errors] %>
+    <% flash[:my_errors].each do |error| %>
+      <div class="errors"><%= error %></div>
+    <% end %>
+  <% end %>
   <div class="form">
     <%= form_for @user do |f| %>
       <%= f.label :Username %>
@@ -16,7 +16,7 @@
       <%= f.label :password %>
       <%= f.password_field :password %>
   
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign Up", id: "login-btn" %>
 
     <% end %>
 

@@ -20,8 +20,14 @@ class MealsController < ApplicationController
     params[:meal][:yelp_id] = session[:current_restaurant] # @current_restaurant using sessions controller
     params[:meal][:rating] = params[:rating].to_i
     # byebug
-    meal = Meal.create(meal_params)
-    redirect_to meal_path(meal)
+    @meal = Meal.create(meal_params)
+    if @meal.valid?
+      flash[:success] = "Welcome"
+      redirect_to meal_path(@meal)
+    else
+        flash[:my_errors] = @meal.errors.full_messages
+        redirect_to new_meal_path
+    end
   end
 
   def edit
